@@ -1,0 +1,73 @@
+etl:
+  yelp:
+    business_file: data/raw/yelp/yelp_dataset/yelp_academic_dataset_business.json
+    processed_dir: data/processed/yelp
+    batch_size: 25000
+    print_every: 50000
+    output_formats: [parquet, csv]
+    category_to_industry:
+      Restaurants: restaurants
+      Food: food
+      Bars: bars
+      Nightlife: nightlife
+      Fast Food: fast_food
+      Coffee & Tea: coffee_tea
+    needed_fields:
+      - business_id
+      - name
+      - address
+      - city
+      - state
+      - postal_code
+      - latitude
+      - longitude
+      - stars
+      - review_count
+      - is_open
+      - categories
+  google:
+    # Google Places API Configuration
+    api_key: ""  # GOOGLE_PLACES_API_KEY - Set in environment or here
+    processed_dir: data/processed/google
+    cache_dir: data/processed/google/cache
+    radius_meters: 50000  # 50km search radius per city
+    max_results: 60      # Max results per city/type combination
+    rate_limit_delay: 0.1  # Seconds between API requests
+    output_formats: [parquet, csv]
+    
+    # Florida major cities for geographic search coverage
+    cities:
+      - name: "Miami"
+        lat: 25.7617
+        lng: -80.1918
+      - name: "Orlando"
+        lat: 28.5383
+        lng: -81.3792
+      - name: "Tampa"
+        lat: 27.9506
+        lng: -82.4572
+      - name: "Jacksonville"
+        lat: 30.3322
+        lng: -81.6557
+      - name: "Fort Lauderdale"
+        lat: 26.1224
+        lng: -80.1373
+      - name: "Tallahassee"
+        lat: 30.4518
+        lng: -84.27277
+      - name: "St. Petersburg"
+        lat: 27.7676
+        lng: -82.6403
+      - name: "Gainesville"
+        lat: 29.6516
+        lng: -82.3248
+    
+    # Google Places types to search for restaurants
+    place_types:
+      - restaurant
+      - meal_takeaway
+      - meal_delivery
+      - food
+      - bar
+      - cafe
+      - bakery
