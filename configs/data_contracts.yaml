@@ -1,0 +1,18 @@
+yelp_business:
+  description: "Esquema normalizado de negocios Yelp Florida"
+  primary_key: business_id
+  fields:
+    business_id: {type: string, nullable: false}
+    name: {type: string, nullable: true}
+    address: {type: string, nullable: true}
+    city: {type: string, nullable: true}
+    state: {type: string, nullable: true}
+    postal_code: {type: string, nullable: true}
+    latitude: {type: float, nullable: true}
+    longitude: {type: float, nullable: true}
+    stars: {type: float, nullable: true}
+    review_count: {type: int, nullable: true}
+    is_open: {type: int, nullable: true}
+    categories: {type: string, nullable: true}
+    categories_list: {type: array[string], nullable: true}
+    primary_vertical: {type: string, nullable: true}
