@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: florida-restaurant-atlas
+Version: 0.1.0
+Summary: Mapa vivo de restaurantes Florida 2000-2025
+Author: Florida Restaurant Atlas
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: sqlalchemy
+Requires-Dist: pymysql
+Requires-Dist: duckdb
+Requires-Dist: pyarrow
+Requires-Dist: scikit-learn
+Requires-Dist: joblib
+Requires-Dist: matplotlib
+Requires-Dist: streamlit
+Requires-Dist: python-dotenv
+Requires-Dist: pandera
+Requires-Dist: geopy
+Requires-Dist: rapidfuzz
+Provides-Extra: dev
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: types-PyYAML; extra == "dev"
